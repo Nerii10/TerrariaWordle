@@ -119,6 +119,7 @@ td {
 }
 .guess-button-bg {
   border-radius: 5px;
+  border-color: white;
   cursor: pointer;
   width: 30px;
   display: flex;
