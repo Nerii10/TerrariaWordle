@@ -246,6 +246,7 @@ td {
 /* Item Container */
 .item-container {
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   background-color: #1a2553d7;
   padding: 25px;
