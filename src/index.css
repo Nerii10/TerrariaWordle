@@ -53,7 +53,7 @@ body {
 .background2 {
   background-image: url('/TerrariaWordle/GrassTop1.png');
   background-size: 150px;
-  background-repeat: repeat-x;
+  background-repeat: no-repeat;
   background-position: center 810px;
   z-index: -1;
 }
