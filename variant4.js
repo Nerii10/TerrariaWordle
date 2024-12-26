@@ -3,7 +3,7 @@ import { transform } from "framer-motion";
 export const fadeIn4 = (direction, delay) => {
     return {
         hidden: {
-            y: direction === 'up' ? 50 : direction === 'down' ? -35 : 0,
+            y: direction === 'up' ? 50 : direction === 'down' ? -20 : 0,
             x: direction === 'right' ? 50 : direction === 'left' ? -20 : 0,
             opacity: 0,
             scale: 0.1,

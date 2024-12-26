@@ -110,7 +110,7 @@ function handleKeyDown(event) {
 
 
       
-      <h2>your tries: {UserScore}</h2>
+      
       
       
       <motion.div 
@@ -144,6 +144,7 @@ function handleKeyDown(event) {
             <img src="/TerrariaWordle/Hints/image_hint.png" alt="image hint" />
           </motion.button>
         </div>
+        <h2 style={{margin:0 ,textAlign:"center", fontSize:"20px"}}>Attempts: {UserScore}</h2>
 
         
         <br></br>
@@ -210,7 +211,7 @@ function handleKeyDown(event) {
     viewport={{ once: true }}
     className="Win"
   >
-    Congratulations, You got it right in {UserScore + 1} try!
+    Congratulations, You got it right in {UserScore + 1} attempt!
   </motion.h1>
 )}
 </div>
