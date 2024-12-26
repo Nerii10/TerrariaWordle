@@ -21,7 +21,8 @@ function ItemList() {
     if (!Guessed) {
       let item = data.find(item => item.name.toLowerCase() === UserGuess.toLowerCase());
       if (item) {
-        if (!UserItems.some(item => item.name.toLowerCase() === UserGuess.toLowerCase())) {
+        if (!UserItems.some(item => item.name.toLowerCase() === UserGuess.toLowerCase())) 
+          {
           if (UserGuess === TodayItems[0].name) {
             setUserItems([...UserItems, item]);
             setGuessed(true);
@@ -32,6 +33,9 @@ function ItemList() {
             setUserScore(prevScore => prevScore + 1)
             SetUserGuess("");
           }
+        } else
+        {
+          SetUserGuess("");
         }
       }
     }
