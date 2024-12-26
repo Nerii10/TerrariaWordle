@@ -27,7 +27,7 @@ function ItemList() {
             setGuessed(true);
             SetUserGuess("");
           } else {
-            
+            {console.log(item.obtained)}
             setUserItems([...UserItems, item]);
             setUserScore(prevScore => prevScore + 1)
             SetUserGuess("");
@@ -247,7 +247,7 @@ function handleKeyDown(event) {
               viewport={{ once: true }}
             >
               <motion.div 
-                className={item.id === TodayItems[0].id ? "guessed" : "missed"} 
+                className={item.id == TodayItems[0].id ? "guessed" : "missed"} 
                 variants={fadeIn("down", 0.1)} 
                 initial="hidden" 
                 whileInView="show" 
@@ -257,7 +257,7 @@ function handleKeyDown(event) {
               </motion.div>
 
               <motion.div 
-                className={item.name === TodayItems[0].name ? "guessed" : "missed"} 
+                className={item.name == TodayItems[0].name ? "guessed" : "missed"} 
                 variants={fadeIn("down", 0.2)} 
                 initial="hidden" 
                 whileInView="show" 
@@ -267,7 +267,7 @@ function handleKeyDown(event) {
               </motion.div>
 
               <motion.div 
-                className={item.rarity === TodayItems[0].rarity ? "guessed" : "missed"} 
+                className={item.rarity == TodayItems[0].rarity ? "guessed" : "missed"} 
                 variants={fadeIn("down", 0.3)} 
                 initial="hidden" 
                 whileInView="show" 
@@ -277,7 +277,7 @@ function handleKeyDown(event) {
               </motion.div>
 
               <motion.div 
-                className={item.damage === TodayItems[0].damage ? "guessed" : "missed"} 
+                className={item.damage == TodayItems[0].damage ? "guessed" : "missed"} 
                 variants={fadeIn("down", 0.4)} 
                 initial="hidden" 
                 whileInView="show" 
@@ -287,7 +287,7 @@ function handleKeyDown(event) {
               </motion.div>
 
               <motion.div 
-                className={item.damageType === TodayItems[0].damageType ? "guessed" : "missed"} 
+                className={item.damageType == TodayItems[0].damageType ? "guessed" : "missed"} 
                 variants={fadeIn("down", 0.5)} 
                 initial="hidden" 
                 whileInView="show" 
@@ -297,7 +297,7 @@ function handleKeyDown(event) {
               </motion.div>
 
               <motion.div 
-                className={item.speed === TodayItems[0].speed ? "guessed" : "missed"} 
+                className={item.speed == TodayItems[0].speed ? "guessed" : "missed"} 
                 variants={fadeIn("down", 0.6)} 
                 initial="hidden" 
                 whileInView="show" 
@@ -307,7 +307,7 @@ function handleKeyDown(event) {
               </motion.div>
 
               <motion.div 
-                className={item.knockback === TodayItems[0].knockback ? "guessed" : "missed"} 
+                className={item.knockback == TodayItems[0].knockback ? "guessed" : "missed"} 
                 variants={fadeIn("down", 0.7)} 
                 initial="hidden" 
                 whileInView="show" 
@@ -317,7 +317,7 @@ function handleKeyDown(event) {
               </motion.div>
 
               <motion.div 
-                className={item.material === TodayItems[0].material ? "guessed" : "missed"} 
+                className={item.material == TodayItems[0].material ? "guessed" : "missed"} 
                 variants={fadeIn("down", 0.8)} 
                 initial="hidden" 
                 whileInView="show" 
@@ -327,7 +327,7 @@ function handleKeyDown(event) {
               </motion.div>
 
               <motion.div 
-                className={item.obtained === TodayItems[0].obtained ? "guessed" : "missed"} 
+                className={item.obtained.some(el => TodayItems[0].obtained.includes(el)) ? "guessed" : "missed"}
                 variants={fadeIn("down", 0.9)} 
                 initial="hidden" 
                 whileInView="show" 
@@ -337,7 +337,7 @@ function handleKeyDown(event) {
               </motion.div>
 
               <motion.div 
-                className={item.sell === TodayItems[0].sell ? "guessed" : "missed"} 
+                className={item.sell == TodayItems[0].sell ? "guessed" : "missed"} 
                 variants={fadeIn("down", 1)} 
                 initial="hidden" 
                 whileInView="show" 
