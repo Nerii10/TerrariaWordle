@@ -21,7 +21,6 @@ function App() {
         <div className="ItemList">
           <ItemList></ItemList>
         </div>
-        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
 
       </body>
     </>
