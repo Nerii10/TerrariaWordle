@@ -51,7 +51,7 @@ body {
 }
 
 .background2 {
-  background-image: url('Backgrounds/grasstop.png');
+  background-image: url('/TerrariaWordle/Backgrounds/grasstop.png');
   background-size: 150px;
   background-repeat: repeat-x;
   background-position: center 810px;
@@ -59,7 +59,7 @@ body {
 }
 
 .background3 {
-  background-image: url('Backgrounds/bgDirt.png');
+  background-image: url('/TerrariaWordle/Backgrounds/bgDirt.png');
   background-size: 90px auto;
   background-repeat: repeat;
   margin-top: 820px;
@@ -118,13 +118,13 @@ td {
 .guess-button-bg {
   border-radius: 5px;
   width: 30px;
-  transition:  1s ease;
+  transition:  0.2s ease;
   transition-property: box-shadow;
   font-family: "terafont", Arial, Helvetica, sans-serif;
   font-size: 20px;
   color:rgb(152, 193, 255);
   height:fit-content;
-  box-shadow: 0px 0px 0px 0px black;
+  box-shadow: 0px 0px 1px 0px rgba(255, 255, 255, 0.418);
   background-color: #6bdcff23;
 }
 
