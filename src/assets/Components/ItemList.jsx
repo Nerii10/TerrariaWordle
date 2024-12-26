@@ -104,10 +104,6 @@ function handleKeyDown(event) {
       
 
 
-      <div className="background1"></div>
-      <div className="background2"></div>
-      <div className="background3"></div>
-
 
       
       <h2>your tries: {UserScore}</h2>
