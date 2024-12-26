@@ -51,8 +51,9 @@ body {
 }
 
 .background2 {
-  background-image: url('https://terraria.org/static/media/wall_top_grass.e8d5ebf5.png');
+  background-image: url('https://terraria.wiki.gg/images/e/ef/Grass-top-overworld.png');
   background-size: 222x;
+  margin-top: 820px;
   background-repeat: repeat;
   z-index: -1;
 }
