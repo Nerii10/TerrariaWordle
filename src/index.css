@@ -41,15 +41,6 @@ body {
   z-index: -3;
 }
 
-@keyframes move {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
-}
-
 .background2 {
   background-image: url('/TerrariaWordle/got.png');
   background-size: 150px;
@@ -66,6 +57,16 @@ body {
   margin-top: 820px;
   z-index: -2;
 }
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+
 
 /* Fonts */
 @font-face {
@@ -246,7 +247,6 @@ td {
 /* Item Container */
 .item-container {
   display: flex;
-  overflow: hidden;
   flex-direction: column;
   background-color: #1a2553d7;
   padding: 25px;
@@ -462,5 +462,32 @@ td {
   .missed img {
     width: 4vw;
     filter: saturate(0) drop-shadow(0px 0px 0.1vw #ff0000ad);
+  }
+
+
+  .background1 {
+    background-size: 1000px auto;
+    background-repeat: repeat-x;
+    background-position: top left;
+    position: fixed;
+    animation: move 100s linear infinite;
+    z-index: -3;
+  }
+  
+  .background2 {
+    background-image: url('/TerrariaWordle/got.png');
+    background-size: 110px;
+  
+    margin-top: 640px;
+    background-repeat: repeat-x;
+    z-index: -1;
+  }
+  
+  .background3 {
+    background-image: url('/TerrariaWordle/Backgrounds/bgDirt.png');
+    background-size: 90px auto;
+    background-repeat: repeat;
+    margin-top: 645px;
+    z-index: -2;
   }
 }
