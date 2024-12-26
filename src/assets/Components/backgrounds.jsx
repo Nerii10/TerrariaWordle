@@ -41,7 +41,7 @@ function Background()
                 variants={fadeIn4("down",0)}
                 initial="hidden" 
                 whileInView="show" 
-                transition={{ duration: 0.05 }} 
+                transition={{ duration:0.1 }} 
                 viewport={{once: false}}
             >
              &lt;
@@ -51,7 +51,7 @@ function Background()
             variants={fadeIn4("down",0)}
                 initial="hidden" 
                 whileInView="show" 
-                transition={{ duration: 0.05 }} 
+                transition={{ duration: 0.1 }} 
                 viewport={{once: false}}
             className="guess-button-bg" 
                 whileTap={{ scale: 1.25, rotate: "5deg"}}
