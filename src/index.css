@@ -51,10 +51,11 @@ body {
 }
 
 .background2 {
-  background-image: url('https://terraria.wiki.gg/images/e/ef/Grass-top-overworld.png');
-  background-size: 222x;
-  margin-top: 400px;
-  background-repeat: repeat;
+  background-image: url('/TerrariaWordle/got.png');
+  background-size: 150px;
+
+  margin-top: 813px;
+  background-repeat: repeat-x;
   z-index: -1;
 }
 
