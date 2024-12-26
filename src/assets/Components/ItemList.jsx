@@ -284,7 +284,7 @@ function handleKeyDown(event) {
                 whileInView="show" 
                 viewport={{ once: true }}
               >
-                {item.damage}
+                {item.damage} {item.damage > TodayItems[0].damage ? "↓" : item.damage < TodayItems[0].damage ? "↑" : ""}
               </motion.div>
 
               <motion.div 
