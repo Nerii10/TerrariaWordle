@@ -508,7 +508,7 @@ td {
     background-image: url('/TerrariaWordle/got.png');
     background-size: 200px;
   
-    margin-top: 813px;
+    margin-top: 630px;
     background-repeat: repeat-x;
     z-index: -6;
   }
@@ -517,35 +517,35 @@ td {
     background-image: url('/TerrariaWordle/Backgrounds/bgDirt.png');
     background-size: 160px;
     background-repeat: repeat;
-    margin-top: 820px;
+    margin-top: 635px;
     z-index: -7;
   }
   .background4 {
     background-image: url('/TerrariaWordle/Backgrounds/dirttop.png');
     background-size: 220px;
     background-repeat: repeat-x;
-    margin-top: 1400px;
+    margin-top: 1200px;
     z-index: -3;
   }
   .background5 {
     background-image: url('/TerrariaWordle/Backgrounds/bgCave.png');
     background-size: 160px;
     background-repeat: repeat;
-    margin-top: 1410px;
+    margin-top: 1210px;
     z-index: -5;
   }
   .background6 {
     background-image: url('/TerrariaWordle/Backgrounds/rocktop.png');
     background-size: 220px;
     background-repeat: repeat-x;
-    margin-top: 1950px;
+    margin-top: 1750px;
     z-index: -2;
   }
   .background7 {
     background-image: url('/TerrariaWordle/Backgrounds/bgCave2.png');
     background-size: 190px;
     background-repeat: repeat;
-    margin-top: 1960px;
+    margin-top: 1760px;
     z-index: -3;
   }
 }
