@@ -167,10 +167,10 @@ function handleKeyDown(event) {
   <p style={{ position: "absolute", display: "none" }} className="hint">No Description</p>
 
   {TodayItems && TodayItems.length > 0 && TodayItems[0].id ? (
-    <img style={{ position: "absolute", display: "none" }} className="hint" src={`/TerrariaWordle/ItemImages/${TodayItems[0].id}.png`} alt="item" />
+    <img style={{ position: "absolute", display: "none",filter: "drop-shadow(0px 10px 0.1px rgba(0, 0, 0, 0.486))", zIndex:0}} className="hint" src={`/TerrariaWordle/ItemImages/${TodayItems[0].id}.png`} alt="item" />
   ) : <p>Image not available</p>}
 </div>
-
+  
         <br></br>
       
         <div className="nav-inputs">

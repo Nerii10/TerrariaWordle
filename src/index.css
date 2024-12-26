@@ -137,17 +137,7 @@ td {
 }
 
 /* Buttons */
-.guess-button {
-  color: black;
-  border-radius: 5px;
-  font-family: "terafont", Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  border: none;
-  height: auto;
-  cursor: pointer;
-  box-shadow: 0px 0px 5px 1px black;
-  background-color: #d0d2ff;
-}
+
 .guess-button-bg {
   border-radius: 5px;
   border-color: white;
@@ -174,7 +164,7 @@ td {
   cursor: pointer;
   border-width: 2px;
   border-color: #7278e6;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.493);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.507);
   width: 50px;
   height: 50px;
 }
@@ -243,32 +233,46 @@ td {
 /* Navigation */
 .nav {
   display: flex;
+  
   flex-direction: column;
   background-color: #39498a;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 0px 2px #27356e, 0px 0px 25px 0px #0d1430;
+  
 }
-
+.guess-button {
+  color: black;
+  font-family: "terafont", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px 2px #25274e,0px 0px 10px 1px rgba(0, 0, 0, 0.507);;
+  height: auto;
+  cursor: pointer;
+  background-color: #d0d2ff;
+}
 .nav-hints {
   display: flex;
   flex-direction: row;
+  padding-bottom: 10px;
   justify-content: space-evenly;
 }
 
 .nav-inputs {
+  gap: 20px;
   display: flex;
   flex-direction: row;
-  z-index: 2000;
 }
 
 .nav-inputs-text {
+  box-shadow: 0px 0px 0px 2px #25274e, 0px 0px 10px 1px rgba(0, 0, 0, 0.507);
   font-family: "terafont", Arial, Helvetica, sans-serif;
   font-size: 20px;
   color: white;
   background-color: #0d10414f;
-  box-shadow: 0px 0px 5px 1px black;
   border-radius: 5px;
+  z-index: 2;
   border-width: 1px;
   border: none;
   text-transform: capitalize;
