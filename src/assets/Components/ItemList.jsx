@@ -5,7 +5,7 @@ import { fadeIn } from "../../../variant";
 import { fadeIn2 } from "../../../variant2";
 import { fadeIn3 } from "../../../variant3";
 import rarityData from './rarity.json';
-
+import { fadeIn4 } from "../../../variant4";
 function ItemList() {
   const [UserGuess, SetUserGuess] = useState("");
   const [UserItems, setUserItems] = useState([]);
@@ -110,6 +110,12 @@ function handleKeyDown(event) {
     addItem(); 
   }
 }
+function restartGame() {
+  setGuessed(false);
+  setUserItems([]);
+  setUserScore(0);
+  TodayItemRandom();
+}
 
   return (
     <>  
@@ -118,6 +124,14 @@ function handleKeyDown(event) {
 
       
 
+      <motion.button onClick={restartGame} className="RestartButton"
+       whileTap={{ scale: 1.25, rotate: "-5deg"}}
+       variants={fadeIn4("down",0)}
+       initial="hidden" 
+       whileInView="show" 
+       transition={{ duration:0.1 }} 
+       viewport={{once: false}}
+      >Restart</motion.button>
 
 
       
@@ -156,7 +170,6 @@ function handleKeyDown(event) {
           </motion.button>
         </div>
         <h2 style={{margin:0 ,textAlign:"center", fontSize:"20px"}}>Attempts: {UserScore}</h2>
-
         
         <br></br>
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -164,13 +177,13 @@ function handleKeyDown(event) {
     <p style={{ position: "absolute", display: "none" }} className="hint">{TodayItems[0].sell}</p>
   ) : <p>No items available</p>}
 
-  <p style={{ position: "absolute", display: "none" }} className="hint">No Description</p>
-
+  <p style={{ position: "absolute", display: "none", width:"200px",overflow:"hidden", height:"60px", textAlign:"center" }} className="hint">{TodayItems[0] ? `${TodayItems[0].tooltip}` : "No Description"}</p>
+  
   {TodayItems && TodayItems.length > 0 && TodayItems[0].id ? (
     <img style={{ position: "absolute", display: "none",filter: "drop-shadow(0px 10px 0.1px rgba(0, 0, 0, 0.486))", zIndex:0}} className="hint" src={`/TerrariaWordle/ItemImages/${TodayItems[0].id}.png`} alt="item" />
   ) : <p>Image not available</p>}
 </div>
-  
+<br></br>
         <br></br>
       
         <div className="nav-inputs">
@@ -295,7 +308,7 @@ function handleKeyDown(event) {
                 whileInView="show" 
                 viewport={{ once: true }}
               >
-                {item.damage} {item.damage > TodayItems[0].damage ? "↓" : item.damage < TodayItems[0].damage ? "↑" : ""}
+                {item.damage} {Number(item.damage) > Number(TodayItems[0].damage) ? "↓" : Number(item.damage) < Number(TodayItems[0].damage) ? "↑" : ""}
               </motion.div>
 
               <motion.div 

@@ -139,7 +139,26 @@ td {
 }
 
 /* Buttons */
-
+.RestartButton {
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
+  padding-inline: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  transition:  0.2s ease;
+  transition-property: box-shadow;
+  font-family: "terafont", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color:rgb(152, 193, 255);
+  height:fit-content;
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.5);
+  background-color: #6bdcff23;
+  position: absolute;
+  top:20px;
+}
 .guess-button-bg {
   border-radius: 5px;
   border-color: white;
@@ -187,7 +206,7 @@ td {
   border-radius: 10px;
   scale: 0.95;
   z-index: 5;
-  background-color: #6269f046;
+  background-color: #707eff4b;
   box-shadow: 0px 0px 20px 0px rgb(0, 0, 0);
 }
 
@@ -207,10 +226,14 @@ td {
   border-bottom-right-radius: 20px;
   flex-direction: column;
   padding: 15px;
-  background-color: #3651b979;
+  background-color: #3650b9b9;
   gap: 5px;
-  box-shadow: 0px 0px 50px 0px black;
-  width: 200px;
+  border-color: #02061879;
+  border-width: 2px;
+  border-style:groove;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.651);
+  width: 230px;
+  z-index: -2;
   max-height: 150px;
   transition: 0.5s ease;
   overflow-y: scroll;
@@ -227,8 +250,7 @@ td {
   height: 0px;
   padding-inline: 15px;
   overflow-y: scroll;
-  box-shadow: 0px 0px 50px 0px black;
-  width: 200px;
+  width: 230px;
   z-index: 1000;
 }
 
@@ -265,6 +287,7 @@ td {
   gap: 20px;
   display: flex;
   flex-direction: row;
+  z-index: 55;
 }
 
 .nav-inputs-text {
@@ -366,6 +389,12 @@ td {
 /* Game Logo */
 .GameLogo {
   width: 25.9vw;
+  filter:drop-shadow(02px 4px 0px rgba(0, 0, 0, 0.479));
+}
+
+@keyframes rotate {
+  0% { transform: rotate(-25deg); }
+  100% { transform: rotate(25deg); }
 }
 
 .GameLogoContainer {
@@ -402,6 +431,7 @@ td {
     width: 86vw;
     height: 8vw;
     margin: 0;
+    
     gap: 10px;
   }
 
@@ -419,9 +449,10 @@ td {
     width: 83vw;
     align-items: center;
     padding-inline: 4vw;
+    
     border-radius: 4vw;
     background-color: #1a2553d7;
-  box-shadow: 0px 0px 0px 3px #25274e, 0px 0px 25px 1px rgba(0, 0, 0, 0.507);
+    box-shadow: 0px 0px 0px 3px #25274e, 0px 0px 25px 1px rgba(0, 0, 0, 0.507);
     gap: 20px;
   }
 
