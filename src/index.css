@@ -51,7 +51,7 @@ body {
 }
 
 .background2 {
-  background-image: url('/TerrariaWordle/Backgrounds/bgDirt.png');
+  background-image: url('https://terraria.org/static/media/wall_top_grass.e8d5ebf5.png');
   background-size: 222x;
   background-repeat: repeat;
   z-index: -1;
