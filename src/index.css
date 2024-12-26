@@ -127,29 +127,11 @@ td {
   height: 30px;
   transition:  0.2s ease;
   transition-property: box-shadow;
-  border-bottom-style: outset;
-border-bottom-width: 2px;
-border-image-outset: 0;
-border-image-repeat: stretch;
-border-image-slice: 100%;
-border-image-source: none;
-border-image-width: 1;
-border-left-color: rgb(255, 255, 255);
-border-left-style: outset;
-border-left-width: 2px;
-border-right-color: rgb(255, 255, 255);
-border-right-style: outset;
-border-right-width: 2px;
-border-top-color: rgb(255, 255, 255);
-border-top-left-radius: 5px;
-border-top-right-radius: 5px;
-border-top-style: outset;
-border-top-width: 2px;
   font-family: "terafont", Arial, Helvetica, sans-serif;
   font-size: 20px;
   color:rgb(152, 193, 255);
   height:fit-content;
-  box-shadow: 0px 0px 1px 0px rgba(255, 255, 255, 0.418);
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.5);
   background-color: #6bdcff23;
 }
 
@@ -160,7 +142,7 @@ border-top-width: 2px;
   cursor: pointer;
   border-width: 1px;
   border-color: #7278e6;
-  box-shadow: 0px 0px 5px 0px black;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.493);
   width: 50px;
   height: 50px;
 }
