@@ -137,21 +137,21 @@ function ItemList() {
             whileTap={{ scale: 1.5, rotate: "5deg" }} 
             onClick={() => handleHint(1)}
           >
-            <img src="/TerrariaWordle/Hints/selling_price_hint.png" alt="selling price hint" />
+            <img src="/Hints/selling_price_hint.png" alt="selling price hint" />
           </motion.button>
           <motion.button 
             className="hint-button" 
             whileTap={{ scale: 1.5, rotate: "5deg" }} 
             onClick={() => handleHint(2)}
           >
-            <img src="/TerrariaWordle/Hints/tooltip_hint.png" alt="tooltip hint" />
+            <img src="/Hints/tooltip_hint.png" alt="tooltip hint" />
           </motion.button>
           <motion.button 
             className="hint-button" 
             whileTap={{ scale: 1.5, rotate: "5deg" }} 
             onClick={() => handleHint(3)}
           >
-            <img src="/TerrariaWordle/Hints/image_hint.png" alt="image hint" />
+            <img src="/Hints/image_hint.png" alt="image hint" />
           </motion.button>
         </div>
 
@@ -164,7 +164,7 @@ function ItemList() {
             </p>
 
             {TodayItems && TodayItems.length > 0 && HintShowImage && (
-              <img src={`/TerrariaWordle/ItemImages/${TodayItems[0].id}.png`} alt="item" style={{ filter: "blur(2px)" }} />
+              <img src={`/ItemImages/${TodayItems[0].id}.png`} alt="item" style={{ filter: "blur(2px)" }} />
             )}
           </div>
         </div>
@@ -200,7 +200,7 @@ function ItemList() {
                   onClick={() => { SetUserGuess(item.name); }} 
                   style={{ display: "flex", alignItems: "center" }}
                 >
-                  <img src={`/TerrariaWordle/ItemImages/${item.id}.png`} className="imgsmall" />
+                  <img src={`/ItemImages/${item.id}.png`} className="imgsmall" />
                   <h1 className="search-item-name">{item.name}</h1>
                 </button>
               ))
@@ -249,7 +249,7 @@ function ItemList() {
                 whileInView="show" 
                 viewport={{ once: true }}
               >
-                <img src={`/TerrariaWordle/ItemImages/${item.id}.png`} alt="item" />
+                <img src={`/ItemImages/${item.id}.png`} alt="item" />
               </motion.div>
 
               <motion.div 
@@ -269,7 +269,7 @@ function ItemList() {
                 whileInView="show" 
                 viewport={{ once: true }}
               >
-                <img src={`/TerrariaWordle/Rarities/${item.rarity}.png`} alt="Rarity" />
+                <img src={`/Rarities/${item.rarity}.png`} alt="Rarity" />
               </motion.div>
 
               <motion.div 
