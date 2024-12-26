@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn2 } from "../../../variant2";
+import { fadeIn4 } from "../../../variant4";
+
 function Background()
 {
     const Backgrounds = ["/TerrariaWordle/Backgrounds/background1.png","/TerrariaWordle/Backgrounds/background2.png","/TerrariaWordle/Backgrounds/background3.png","/TerrariaWordle/Backgrounds/background4.png","/TerrariaWordle/Backgrounds/background5.png","/TerrariaWordle/Backgrounds/background6.png","/TerrariaWordle/Backgrounds/background7.png"]
@@ -36,7 +38,7 @@ function Background()
                 className="guess-button-bg" 
                 whileTap={{ scale: 1.25, rotate: "-5deg"}}
                 onClick={() => Change(-1)}
-                variants={fadeIn2("up",0)}
+                variants={fadeIn4("down",0)}
                 initial="hidden" 
                 whileInView="show" 
                 transition={{ duration: 0.1 }} 
@@ -46,11 +48,11 @@ function Background()
             </motion.button>
 
             <motion.button 
-            variants={fadeIn2("up",0)}
-            initial="hidden" 
-            whileInView="show" 
-            transition={{ duration: 0.1 }} 
-            viewport={{once: false}}
+            variants={fadeIn4("down",0)}
+                initial="hidden" 
+                whileInView="show" 
+                transition={{ duration: 0.1 }} 
+                viewport={{once: false}}
             className="guess-button-bg" 
                 whileTap={{ scale: 1.25, rotate: "5deg"}}
                 onClick={() => Change(1)}
