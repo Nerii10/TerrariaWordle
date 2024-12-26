@@ -8,9 +8,10 @@ function App() {
 
   return (
     <>
-      <Background></Background>
+    
 
       <body>
+      <Background></Background>
         <motion.div variants={fadeIn("down",0)} initial="hidden" whileInView="show"  className="GameLogoContainer">
           <img src='/TerrariaWordle//logo.png' className='GameLogo'></img>
         </motion.div>

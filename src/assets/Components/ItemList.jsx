@@ -37,6 +37,12 @@ function ItemList() {
         {
           SetUserGuess("");
         }
+      } else
+      {
+        if(SerachList[0])
+          {
+          SetUserGuess(SerachList[0].name)
+          }
       }
     }
   }
@@ -96,7 +102,12 @@ function ItemList() {
 
 function handleKeyDown(event) {
   if (event.key === "Enter") {
-    addItem(); // Wywołuje funkcję dodawania przedmiotu
+          if(SerachList[0])
+            {
+            SetUserGuess(SerachList[0].name)
+            }
+
+    addItem(); 
   }
 }
 
