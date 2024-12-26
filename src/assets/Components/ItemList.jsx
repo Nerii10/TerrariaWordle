@@ -3,6 +3,8 @@ import data from './Data';
 import { motion } from 'framer-motion';
 import { fadeIn } from "../../../variant";
 import { fadeIn2 } from "../../../variant2";
+import { fadeIn3 } from "../../../variant3";
+import rarityData from './rarity.json';
 
 function ItemList() {
   const [UserGuess, SetUserGuess] = useState("");
@@ -11,9 +13,8 @@ function ItemList() {
   const [Guessed, setGuessed] = useState(false);
   const [UserScore, setUserScore] = useState(0);
   const [SerachList, setSearchList] = useState([]);
-  const [Hint, setHint] = useState("");
-  const [HintShowImage, setHintShowImage] = useState(false);
-  const [CurrentHint, setCurrentHint] = useState(0);
+  const [CurrentHintButton, setCurrentHintButton] = useState(0);
+
 
   // Adds an item to the user's list if the guess is correct
   function addItem() {
@@ -26,8 +27,9 @@ function ItemList() {
             setGuessed(true);
             SetUserGuess("");
           } else {
+            
             setUserItems([...UserItems, item]);
-            setUserScore(UserScore + 1);
+            setUserScore(prevScore => prevScore + 1)
             SetUserGuess("");
           }
         }
@@ -60,69 +62,57 @@ function ItemList() {
       setSearchList([]);
       return;
     }
-    setSearchList(data.filter(item => item.name.toLowerCase().startsWith(UserGuess.toLowerCase())));
+    setSearchList(data.filter(item => item.name.toLowerCase().includes(UserGuess.toLowerCase())));
   }
 
-  // Handles the hint logic
   function handleHint(x) {
-    switch (x) {
-      case 1:
-        if (UserScore < 3) {
-          setHint(`try ${-UserScore + 3} more times`);
-          return;
-        }
-        if (CurrentHint === 1) {
-          setHint("");
-          setCurrentHint(0);
-          setHintShowImage(false);
-          return;
-        }
-        setHint(TodayItems[0].sell);
-        setCurrentHint(1);
-        setHintShowImage(false);
-        break;
+    const hint = Array.from(document.getElementsByClassName("hint")); // Konwertujemy HTMLCollection na tablicę
 
-      case 2:
-        if (UserScore < 5) {
-          setHint(`try ${-UserScore + 5} more times`);
-          return;
-        }
-        if (CurrentHint === 2) {
-          setHint("");
-          setCurrentHint(0);
-          setHintShowImage(false);
-          return;
-        }
-        setHint("No description");
-        setHintShowImage(false);
-        setCurrentHint(2);
-        break;
-
-      case 3:
-        if (UserScore < 7) {
-          setHint(`try ${-UserScore + 7} more times`);
-          return;
-        }
-        if (CurrentHint === 3) {
-          setHint("");
-          setCurrentHint(0);
-          setHintShowImage(false);
-          return;
-        }
-        setHint(TodayItems[0].id);
-        setCurrentHint(3);
-        setHintShowImage(true);
-        break;
+    if (CurrentHintButton === x) {
+        setCurrentHintButton(0);
+        hint.forEach((item) => {
+            item.style.display = "none";
+        });
+        return;
     }
+
+    // Jeśli kliknięto 0, ukryj wszystkie wskazówki przed ustawieniem nowego widoku
+    if (x === 0) {
+        hint.forEach((item) => {
+            item.style.display = "none";
+        });
+    } else {
+        hint.forEach((item, index) => {
+            item.style.display = index === x - 1 ? "block" : "none";
+        });
+    }
+
+    setCurrentHintButton(x);
+}
+
+function handleKeyDown(event) {
+  if (event.key === "Enter") {
+    addItem(); // Wywołuje funkcję dodawania przedmiotu
   }
+}
 
   return (
     <>  
+      
+
+
+      
+
+
       <div className="background1"></div>
       <div className="background2"></div>
       <div className="background3"></div>
-      <h2>your tries: {UserScore}</h2>
 
+
+      
+      <h2>your tries: {UserScore}</h2>
+      
+      
       <motion.div 
         className="nav" 
         variants={fadeIn("down", 0.2)} 
@@ -155,22 +145,22 @@ function ItemList() {
           </motion.button>
         </div>
 
-        <br />
+        
+        <br></br>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+  {TodayItems && TodayItems.length > 0 ? (
+    <p style={{ position: "absolute", display: "none" }} className="hint">{TodayItems[0].sell}</p>
+  ) : <p>No items available</p>}
 
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <div style={{ textAlign: "center", maxWidth: "50%", height: "50px" }}>
-            <p style={{ margin: 0 }}>
-              {!HintShowImage ? Hint : ""}
-            </p>
+  <p style={{ position: "absolute", display: "none" }} className="hint">No Description</p>
 
-            {TodayItems && TodayItems.length > 0 && HintShowImage && (
-              <img src={`/TerrariaWordle/ItemImages/${TodayItems[0].id}.png`} alt="item" style={{ filter: "blur(2px)" }} />
-            )}
-          </div>
-        </div>
+  {TodayItems && TodayItems.length > 0 && TodayItems[0].id ? (
+    <img style={{ position: "absolute", display: "none" }} className="hint" src={`/TerrariaWordle/ItemImages/${TodayItems[0].id}.png`} alt="item" />
+  ) : <p>Image not available</p>}
+</div>
 
-        <br />
-
+        <br></br>
+      
         <div className="nav-inputs">
           <input 
             className="nav-inputs-text" 
@@ -178,6 +168,7 @@ function ItemList() {
             placeholder="Guess Item" 
             value={UserGuess} 
             onChange={guessItem} 
+            onKeyDown={handleKeyDown}
           />
           <motion.button 
             className="guess-button" 
@@ -210,7 +201,20 @@ function ItemList() {
       </motion.div>
 
       <br /><br />
-
+      <div style={{display:"flex", justifyContent:"center",alignItems:"center"}}>
+      {Guessed && (
+  <motion.h1
+    variants={fadeIn3("down")}
+    initial="hidden"
+    animate="show"
+    viewport={{ once: true }}
+    className="Win"
+  >
+    Congratulations, You got it right in {UserScore + 1} try!
+  </motion.h1>
+)}
+</div>
+<br /><br />
       <motion.div 
         className="item-container" 
         variants={fadeIn("down", 0.4)} 
@@ -269,7 +273,7 @@ function ItemList() {
                 whileInView="show" 
                 viewport={{ once: true }}
               >
-                <img src={`/TerrariaWordle/Rarities/${item.rarity}.png`} alt="Rarity" />
+                {rarityData[item.rarity]}
               </motion.div>
 
               <motion.div 
@@ -339,7 +343,7 @@ function ItemList() {
                 whileInView="show" 
                 viewport={{ once: true }}
               >
-                {item.sell}
+                {item.sell.replace(/\s*coins?$/i, "").trim()}
               </motion.div>
             </motion.div>
           </div>

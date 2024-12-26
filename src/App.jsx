@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <body>
-        <motion.div variants={fadeIn("down",0)} initial="hidden" whileInView="show" viewport={{ once: true }} className="GameLogoContainer">
+        <motion.div variants={fadeIn("down",0)} initial="hidden" whileInView="show"  className="GameLogoContainer">
           <img src='/TerrariaWordle//logo.png' className='GameLogo'></img>
         </motion.div>
        
