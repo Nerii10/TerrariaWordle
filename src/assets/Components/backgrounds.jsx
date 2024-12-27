@@ -29,11 +29,14 @@ function Background()
 
   
 
-
     return(
         <>  
-               
-               <div style={{ padding: "20px", display: "flex", justifyContent: "space-between",  zIndex:"200", height:"0px"}}>
+               <motion.div className="Navigation"
+               variants={fadeIn2("down",0)}
+               initial="hidden" 
+               whileInView="show" 
+               transition={{ duration:0.1 }} 
+               viewport={{once: false}}>
             <motion.button 
                 className="guess-button-bg" 
                 whileTap={{ scale: 1.25, rotate: "-5deg"}}
@@ -59,7 +62,7 @@ function Background()
          >
          &gt;
             </motion.button>
-                </div>
+                </motion.div>
 
               
 

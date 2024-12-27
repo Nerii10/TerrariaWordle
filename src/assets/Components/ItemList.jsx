@@ -7,6 +7,8 @@ import { fadeIn3 } from "../../../variant3";
 import rarityData from './rarity.json';
 import { fadeIn4 } from "../../../variant4";
 function ItemList() {
+
+
   const [UserGuess, SetUserGuess] = useState("");
   const [UserItems, setUserItems] = useState([]);
   const [TodayItems, setTodayItems] = useState([]);
@@ -126,7 +128,7 @@ function restartGame() {
 
       <motion.button onClick={restartGame} className="RestartButton"
        whileTap={{ scale: 1.25, rotate: "-5deg"}}
-       variants={fadeIn4("down",0)}
+       variants={fadeIn4("down",0.4)}
        initial="hidden" 
        whileInView="show" 
        transition={{ duration:0.1 }} 
